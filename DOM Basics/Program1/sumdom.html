@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="hype">
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <button type="submit">Submit</button>
+        <div id="div1"></div>
+    </form>
+
+    <script>
+        const form = document.getElementById("hype");
+        const num1 = document.getElementById("num1");
+        const num2 = document.getElementById("num2");
+        const div1 = document.getElementById("div1");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const val1 = Number(num1.value);
+            const val2 = Number(num2.value);
+            const result = val1 + val2;
+
+            div1.textContent = `The sum of ${val1} and ${val2} is ${result}`;
+        });
+    </script>
+</body>
+</html>

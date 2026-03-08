@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+
+<script>
+   
+    let addList = (name) => {
+        let ul = document.createElement('ul')
+        let li = document.createElement('li')
+        let listName = document.createTextNode(name)
+        ul.className = 'list'
+
+
+        let list = ul.appendChild(li)
+        let text = li.appendChild(listName)
+   
+        document.body.appendChild(ul)
+    }
+
+    addList('Hallo')
+    addList('Hallo')
+    addList('Hallo')
+    addList('Hallo')
+    addList('Hallo')
+
+    let ul = document.querySelectorAll('.list')
+
+    // let colorIt = (color) => {
+    //     ul.forEach((l)=>{
+    //     l.style.color= color
+    // })
+    // }
+
+    // colorIt('green')
+
+    let colorIt = (color) => {
+        Array.from(ul).map((l)=>{
+        l.style.color= color
+    })
+    }
+
+    colorIt('blue')      
+   
+</script>
+</html>
