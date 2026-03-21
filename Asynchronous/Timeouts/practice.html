@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mini Project</title>
+</head>
+<body>
+    <h1>WELCOME</h1>
+    <button id="stop1">Stop Timeout</button>
+    <button id="stop2">Stop Interval</button>
+
+    <script>
+        let heading = document.querySelector("h1");
+        let button1 = document.querySelector("#stop1");
+        let button2 = document.querySelector("#stop2");
+
+        let variable1 = setTimeout(() => {
+            heading.innerHTML = "TEXT CHANGED AFTER 3 SECONDS";
+        }, 3000);
+
+        button1.addEventListener("click", () => {
+            clearTimeout(variable1);
+            console.log("Timeout stopped");
+        });
+
+        let variable2 = setInterval(() => {
+            if (heading.style.color == "red") {
+                heading.style.color = "blue";
+            }
+            else {
+                heading.style.color = "red";
+            }
+        }, 1000);
+
+        button2.addEventListener("click", () => {
+            clearInterval(variable2);
+            console.log("Interval stopped");
+        });
+    </script>
+</body>
+</html>
